@@ -142,12 +142,9 @@ class AnimalController extends Controller
     {
         $this->authorize('delete', $animal);
 
-        if ($animal->image_path) {
-            Storage::disk('public')->delete($animal->image_path);
-        }
         $animal->delete();
 
-        return redirect()->back()->with('success', 'Inzerát byl úspěšně smazán.');
+        return redirect()->back()->with('success', 'Inzerát byl přesunut do koše.');
     }
 
     /**
