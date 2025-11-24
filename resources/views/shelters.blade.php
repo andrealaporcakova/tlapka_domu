@@ -45,7 +45,7 @@
         </div>
     </section>
 
-    <section id="how-to-help" class="py-16 bg-violet-100">
+    <section id="how-to-help" class="py-16 bg-violet-100 rounded-none 2xl:rounded-3xl mb-10">
         <div class="max-w-7xl mx-auto px-4 text-center">
             <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 text-center mb-6">Jak můžete útulkům pomoci?</h2>
 
