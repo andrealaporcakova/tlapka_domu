@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('stories', function (Blueprint $table) {
             $table->id();
-            $table->string('title'); // Pro "Max se vrátil..."
-            $table->string('category'); // Pro "Pes / Praha"
-            $table->text('excerpt'); // Pro krátký popisek
-            $table->string('image_path'); // Pro "images/missing_dog.webp"
-            $table->string('url')->default('#'); // Pro odkaz "Číst celý příběh"
+            $table->string('title');
+            $table->string('category');
+            $table->text('excerpt');
+            $table->string('image_path');
+            $table->string('url')->default('#');
             $table->timestamps();
         });
     }

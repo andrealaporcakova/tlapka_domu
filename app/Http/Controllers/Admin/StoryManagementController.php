@@ -66,52 +66,6 @@ class StoryManagementController extends Controller
         return redirect()->route('admin.stories.index')->with('success', 'Příběh byl úspěšně vytvořen.');
     }
 
-    /** Displays the story editing form */
-    public function edit(Story $story)
-    {
-        if (Gate::denies('access-admin-panel')) {
-            abort(403);
-        }
-
-        return view('admin.stories.edit', ['story' => $story]);
-    }
-
-    /** Updates the story in the database */
-    public function update(Request $request, Story $story)
-    {
-        if (Gate::denies('access-admin-panel')) {
-            abort(403);
-        }
-
-        $validated = $request->validate([
-            'title' => 'required|string|max:255',
-            'category' => 'required|string|max:100',
-            'excerpt' => 'required|string',
-            'body' => 'nullable|string',
-            'image' => 'nullable|image|max:2048',
-            'url' => 'nullable|url',
-        ]);
-
-        $imagePath = $story->image_path;
-        if ($request->hasFile('image')) {
-            if ($story->image_path) {
-                Storage::disk('public')->delete($story->image_path);
-            }
-            $imagePath = $request->file('image')->store('images', 'public');
-        }
-
-        $story->update([
-            'title' => $validated['title'],
-            'category' => $validated['category'],
-            'excerpt' => $validated['excerpt'],
-            'body' => $validated['body'],
-            'image_path' => $imagePath,
-            'url' => $validated['url'] ?? '#',
-        ]);
-
-        return redirect()->route('admin.stories.index')->with('success', 'Příběh byl úspěšně upraven.');
-    }
-
     /** Deletes the story */
     public function destroy(Story $story)
     {

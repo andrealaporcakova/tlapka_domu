@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('shelters', function (Blueprint $table) {
             $table->id();
-            $table->string('name'); // Pro "AniDef, z.s."
-            $table->string('location'); // Pro "Žim u Teplic..."
-            $table->text('description'); // Pro popis
-            $table->string('url'); // Pro odkaz
+            $table->string('name'); /
+            $table->string('location');
+            $table->text('description');
+            $table->string('url');
             $table->timestamps();
         });
     }

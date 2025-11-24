@@ -14,6 +14,9 @@ class AnimalController extends Controller
 {
     use AuthorizesRequests;
 
+    /**
+     * Loads a list of animals from the database and applies the filters that the user filled
+     */
     public function index(Request $request)
     {
         $query = Animal::query();
@@ -38,6 +41,9 @@ class AnimalController extends Controller
         ]);
     }
 
+    /**
+     * Displays a page with a form for adding an ad.
+     */
     public function report(string $stav = null)
     {
         $statusMap = [
@@ -57,14 +63,14 @@ class AnimalController extends Controller
     {
         $validated = $request->validated();
 
-        // 2. IMAGE PROCESSING: Handle file upload and retrieve the storage path.
+        // IMAGE PROCESSING: Handle file upload and retrieve the storage path.
         $imagePath = null;
         if ($request->hasFile('image')) {
             // Store the image in the 'storage/app/public/animals' directory.
             $imagePath = $request->file('image')->store('animals', 'public');
         }
 
-        // 3. USER/GUEST DATA LOGIC: Determine the source of the contact information.
+        //  USER/GUEST DATA LOGIC: Determine the source of the contact information.
         $userId = null;
         $guestEmail = null;
         $guestPhone = null;
@@ -101,7 +107,6 @@ class AnimalController extends Controller
 
         } catch (\Throwable $exception) {
             // Catches any database or model exception (e.g., Mass Assignment, constraint issues).
-            // Note: This logs the error internally but still shows success to the user (due to the redirect below).
             report($exception->getMessage());
         }
 
@@ -129,6 +134,10 @@ class AnimalController extends Controller
             'user' => Auth::user(),
         ]);
     }
+
+    /**
+     * Changes the status of the ad so that it stops appearing in the list of animals
+     */
     public function reunite(Animal $animal)
     {
         $this->authorize('reunite', $animal);

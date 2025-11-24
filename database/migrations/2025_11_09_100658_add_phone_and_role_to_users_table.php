@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('phone', 20)->nullable()->after('email'); // Přidá pole 'phone' za 'email'
-            $table->enum('role', ['admin', 'reporter', 'shelter'])->default('reporter')->after('phone'); // Přidá pole 'role' za 'phone'
+            $table->string('phone', 20)->nullable()->after('email');
+            $table->enum('role', ['admin', 'reporter', 'shelter'])->default('reporter')->after('phone');
         });
     }
 

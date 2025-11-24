@@ -52,7 +52,7 @@ class Animal extends Model
 
         // 2. check if it's our "fake" (Seeder) photo
         if (Str::startsWith($this->image_path, 'images/placeholders/')) {
-            // Pokud ano, vrátíme cestu přímo z 'public/'
+
             return asset($this->image_path);
         }
 

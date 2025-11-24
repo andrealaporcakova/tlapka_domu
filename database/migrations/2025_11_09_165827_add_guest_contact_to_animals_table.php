@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('animals', function (Blueprint $table) {
-            // Nový sloupec pro uložení kontaktu neregistrovaného uživatele
+
             $table->string('guest_contact', 100)->nullable()->after('user_id');
         });
     }
