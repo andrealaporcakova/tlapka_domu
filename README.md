@@ -26,6 +26,20 @@
 
 ---
 
+## 📸 Screenshots
+
+Here is a glimpse of the application's design and functionality.
+
+<img width="1920" height="4090" alt="homepage" src="https://github.com/user-attachments/assets/0b267dd2-1887-45a0-a972-b594b6e77221" />
+<img width="1920" height="4204" alt="animal_database" src="https://github.com/user-attachments/assets/bd27dea1-4822-45cd-ac9b-d95614b88267" />
+<img width="1920" height="2499" alt="community" src="https://github.com/user-attachments/assets/8d6b4321-a0b5-401c-8326-d810d6ff2cbd" />
+<img width="1920" height="2023" alt="admin_1" src="https://github.com/user-attachments/assets/7e6c2bfa-d3b7-4aab-8255-f80446d4e2a8" />
+<img width="1362" height="811" alt="admin_2" src="https://github.com/user-attachments/assets/1bf2b093-162c-4202-bc1e-ca4649a68514" />
+<img width="1920" height="911" alt="login" src="https://github.com/user-attachments/assets/cb1de569-ebaa-4546-adf4-d72856635c0e" />
+<img width="1920" height="1119" alt="login_2" src="https://github.com/user-attachments/assets/bea2645e-7d75-426f-bb73-85d2270152a9" />
+
+---
+
 ## 🛠️ Tech Stack
 
 This project leverages modern web technologies to ensure performance, security, and scalability.
